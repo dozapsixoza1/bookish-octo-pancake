@@ -34,9 +34,9 @@ from aiogram.types import (
 
 # =========================== КОНФИГ — ПРАВЬ ЗДЕСЬ ===========================
 
-BOT_TOKEN = "123456:AA..."          # токен от @BotFather
-BOT_USERNAME = "your_bot"           # username бота без @
-ADMIN_IDS = {123456789}             # твой telegram id (можно несколько через запятую: {111, 222})
+BOT_TOKEN = "8817681355:AAGWgrpp34d8z5NZKknKwsPNuX_4SU1lac4"          # токен от @BotFather
+BOT_USERNAME = "emojicoolbot"           # username бота без @
+ADMIN_IDS = {8302336447, 8737315231}             # твой telegram id (можно несколько через запятую: {111, 222})
 
 DEFAULT_PRICES = {
     "template_static": 5,
