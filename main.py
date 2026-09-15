@@ -15,6 +15,7 @@ import tempfile
 from PIL import Image, ImageDraw, ImageFont
 
 from aiogram import Bot, Dispatcher, F, Router
+from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
@@ -33,11 +34,11 @@ from aiogram.types import (
 
 # =========================== КОНФИГ — ПРАВЬ ЗДЕСЬ ===========================
 
-BOT_TOKEN = "8817681355:AAGWgrpp34d8z5NZKknKwsPNuX_4SU1lac4"          # токен от @BotFather
-BOT_USERNAME = "emojicoolbot"           # username бота без @
-ADMIN_IDS = {8302336447, 8737315231}             # твой telegram id (можно несколько через запятую: {111, 222})
+BOT_TOKEN = "123456:AA..."          # токен от @BotFather
+BOT_USERNAME = "your_bot"           # username бота без @
+ADMIN_IDS = {123456789}             # твой telegram id (можно несколько через запятую: {111, 222})
 
-DEFAULT_PRICES= {
+DEFAULT_PRICES = {
     "template_static": 5,
     "template_animated": 15,
     "ai_static": 25,
@@ -1083,7 +1084,7 @@ async def cb_admin_backup(call: CallbackQuery, bot: Bot):
 async def main():
     if not ADMIN_IDS:
         logging.warning("ADMIN_IDS не задан — админ-панель будет недоступна никому")
-    bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
+    bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
     dp.include_router(router)
     await bot.delete_webhook(drop_pending_updates=True)
